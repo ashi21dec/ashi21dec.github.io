@@ -32,7 +32,7 @@ font-size: 30px;
  <p style="margin-left:10px; font-size: 30px;">Thankyou for visiting this page. Please fill this up and we all together will give something unique as birthday surprise to Priyal...</p>
 
   <!-- Main Input For Receiving Query to our ML -->
-    <form method="post">
+    <form method="post" action="https://script.google.com/macros/s/AKfycbzXxDTVneloqeIF_gFn_Q3b4gL-Sr06el8GY6-2ZscwZx7jPJiPnsnjcaKhQZHx2djf/exec">
 
 	  <p style="background-color: powderblue; font-family: Arial, Helvetica, sans-serif; font-size: 20px; padding-left:20px;"> Basic Information</p>
     	  <p><label for="name">* Your Full name</label>
@@ -82,7 +82,7 @@ font-size: 30px;
 
 		<div style="text-align:center;">
 
-		<p><input type="submit" value="Submit Form" style = "font-size:30px; background-color: powderblue" onclick="saveFile()" /></p>
+		<p><button type="submit">Submit form</button></p>
 
 		<br>
 		<br>
@@ -92,37 +92,7 @@ font-size: 30px;
          </form>
 
 </div>
-	
-	<script>
-    let saveFile = () => {
-    	
-        // Get the data from each element on the form.
-    	const name = document.getElementById('name');
-            
-        // This variable stores all the data.
-        let data = 
-            '\r Name: ' + name.value ;
-        
-        // Convert the text to BLOB.
-        const textToBLOB = new Blob([data], { type: 'text/plain' });
-        const sFileName = 'formData.txt';	   // The file to save the data.
 
-        let newLink = document.createElement("a");
-        newLink.download = sFileName;
-
-        if (window.webkitURL != null) {
-            newLink.href = window.webkitURL.createObjectURL(textToBLOB);
-        }
-        else {
-            newLink.href = window.URL.createObjectURL(textToBLOB);
-            newLink.style.display = "none";
-            document.body.appendChild(newLink);
-        }
-
-        newLink.click(); 
-    }
-</script>
-	
 
 
 </body>
